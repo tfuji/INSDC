@@ -1,11 +1,11 @@
-INSDC
+Application Ontology for INSDC 
 =====
 
 The INSDC and DDBJ databases standardisation effort
 
 
-== sample querying sparql ==
-* get all featues
+## sample querying sparql
+### get all featues
 
     select ?feature, ?label, ?comment from <http://insdc.org/> where 
     {
@@ -15,7 +15,7 @@ The INSDC and DDBJ databases standardisation effort
     }
 
 
-* get all qualifiers
+### get all qualifiers
 
     select ?qualifier, ?qualifier_label, ?qualifier_comment where 
     {
@@ -25,7 +25,7 @@ The INSDC and DDBJ databases standardisation effort
     ?feature rdfs:label ?feature_label.
     } order by ?qualifier
 
-* get qualifiers of source featuers
+### get qualifiers of source featuers
 
     select ?feature_label, ?qualifier_label, ?qualifier_type,?qualifier_comment where {
     ?s owl:annotatedSource ?feature;
