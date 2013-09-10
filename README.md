@@ -7,7 +7,7 @@ The INSDC and DDBJ databases standardisation effort
 ## sample querying sparql
 ### get all featues
 
-    select ?feature, ?label, ?comment from <http://insdc.org/> where 
+    select ?feature, ?label, ?comment where 
     {
     ?feature rdfs:subClassOf <http://insdc.org/owl/Feature>.
     ?feature rdfs:label ?label.
