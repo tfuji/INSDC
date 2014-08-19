@@ -1,60 +1,14 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <file:///Users/tf/Work/sw/insdc/20140819/insdc.ttl> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://insdc.org/owl/#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://insdc.org/owl/>
     a owl:Ontology ;
     rdfs:label "insdc" ;
-    rdfs:seeAlso "http://www.insdc.org/" ;
-    owl:equivalentClass [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/allele>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/citation>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/db_xref>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/experiment>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gene>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gene_synonym>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/inference>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/locus_tag>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/map>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/note>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/old_locus_tag>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/product>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/pseudo>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/pseudogene>
-    ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/standard_name>
-    ] .
+    rdfs:seeAlso <http://www.insdc.org/> .
 
 <http://insdc.org/owl/ASAP>
     a owl:Class ;
@@ -72,22 +26,17 @@
     rdfs:label "assembly_gap" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/estimated_length>
-    ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gap_type>
     ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/linkage_evidence>
     ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/estimated_length>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gap_type>
     ] .
 
 <http://insdc.org/owl/Attenuator>
@@ -97,42 +46,55 @@
     rdfs:label "attenuator" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ] .
@@ -140,50 +102,61 @@
 <http://insdc.org/owl/BioProject>
     a owl:Class ;
     rdfs:label "BioProject" ;
-    rdfs:subClassOf <http://insdc.org/owl/Database>, owl:Thing .
+    rdfs:subClassOf <http://insdc.org/owl/Database> .
 
 <http://insdc.org/owl/BioSample>
     a owl:Class ;
     rdfs:label "BioSample" ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf <http://insdc.org/owl/Database> .
 
 <http://insdc.org/owl/CAAT_Signal>
     a owl:Class ;
     rdfs:comment "CAAT box; part of a conserved sequence located about 75 bp up-stream of the start point of eukaryotic transcription units which may be involved in RNA polymerase binding; consensus=GG(C or T)CAATCT [1,2]." ;
     rdfs:label "CAAT_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/6193753", "http://identifiers.org/pubmed/6985477" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/6193753>, <http://identifiers.org/pubmed/6985477> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -203,21 +176,27 @@
     rdfs:label "centromere" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -228,87 +207,115 @@
     rdfs:label "CDS" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/artificial_location>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/codon_start>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/EC_number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/exception>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/protein_id>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/ribosomal_slippage>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/translation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/transl_except>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/transl_table>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -323,48 +330,63 @@
     rdfs:label "C_region" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -390,36 +412,47 @@
     rdfs:label "D-loop" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -430,48 +463,63 @@
     rdfs:label "D_segment" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -519,42 +567,55 @@
     rdfs:label "enhancer" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bound_moiety>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -569,60 +630,79 @@
     rdfs:label "exon" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/EC_number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -637,45 +717,59 @@
     rdfs:label "5'UTR" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -686,36 +780,47 @@
     rdfs:label "GC_signal" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -741,18 +846,23 @@
     rdfs:label "gap" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/estimated_length>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ] .
@@ -767,60 +877,79 @@
     rdfs:label "gene" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -854,7 +983,7 @@
     a owl:Class ;
     rdfs:comment "International Nucleotide Sequence Database Collaboration" ;
     rdfs:label "INSDC" ;
-    rdfs:seeAlso "http://www.insdc.org/about" ;
+    rdfs:seeAlso <http://www.insdc.org/about> ;
     rdfs:subClassOf owl:Thing .
 
 <http://insdc.org/owl/ISFinder>
@@ -873,45 +1002,59 @@
     rdfs:label "iDNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -922,54 +1065,71 @@
     rdfs:label "intron" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -978,7 +1138,68 @@
     a owl:Class ;
     rdfs:comment "joining segment of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains;" ;
     rdfs:label "J_segment" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature> .
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
 
 <http://insdc.org/owl/Keyword>
     a owl:Class ;
@@ -994,42 +1215,55 @@
     rdfs:label "LTR" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1047,54 +1281,71 @@
     rdfs:label "mat_peptide" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/EC_number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1105,60 +1356,79 @@
     rdfs:label "mRNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/artificial_location>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -1167,45 +1437,58 @@
     a owl:Class ;
     rdfs:comment "Pribnow box; a conserved region about 10 bp upstream of the start point of bacterial transcription units which may be involved in binding RNA polymerase; consensus=TAtAaT [1,2,3,4];" ;
     rdfs:label "-10_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/1054851", "http://identifiers.org/pubmed/1093168", "http://identifiers.org/pubmed/6344016", "http://identifiers.org/pubmed/94251" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/1054851>, <http://identifiers.org/pubmed/1093168>, <http://identifiers.org/pubmed/6344016>, <http://identifiers.org/pubmed/94251> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1214,45 +1497,58 @@
     a owl:Class ;
     rdfs:comment "a conserved hexamer about 35 bp upstream of the start point of bacterial transcription units; consensus=TTGACa or TGTTGACA;" ;
     rdfs:label "-35_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/1095210", "http://identifiers.org/pubmed/1256568", "http://identifiers.org/pubmed/6181373" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/1095210>, <http://identifiers.org/pubmed/1256568>, <http://identifiers.org/pubmed/6181373> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1263,42 +1559,55 @@
     rdfs:label "misc_binding" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bound_moiety>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -1309,51 +1618,67 @@
     rdfs:label "misc_difference" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/clone>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/compare>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/replace>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1364,57 +1689,75 @@
     rdfs:label "misc_feature" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/number>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1425,57 +1768,75 @@
     rdfs:label "misc_RNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -1486,39 +1847,51 @@
     rdfs:label "misc_recomb" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1529,48 +1902,63 @@
     rdfs:label "misc_signal" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1581,42 +1969,55 @@
     rdfs:label "misc_structure" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1627,51 +2028,67 @@
     rdfs:label "mobile_element" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/mobile_element_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_family>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1682,42 +2099,55 @@
     rdfs:label "modified_base" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/mod_base>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/frequency>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -1743,48 +2173,63 @@
     rdfs:label "N_region" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1795,60 +2240,79 @@
     rdfs:label "ncRNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/ncRNA_class>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -1859,42 +2323,55 @@
     rdfs:label "old_sequence" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/compare>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/replace>
     ] .
@@ -1905,42 +2382,55 @@
     rdfs:label "operon" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -1961,57 +2451,75 @@
     rdfs:label "oriT" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bound_moiety>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/direction>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_family>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_range>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_seq>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2055,39 +2563,50 @@
     a owl:Class ;
     rdfs:comment "recognition region necessary for endonuclease cleavage of an RNA transcript that is followed by polyadenylation; consensus=AATAAA [1];" ;
     rdfs:label "polyA_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/4862513" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/4862513> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -2098,36 +2617,47 @@
     rdfs:label "polyA_site" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -2138,51 +2668,67 @@
     rdfs:label "precursor_RNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -2193,45 +2739,59 @@
     rdfs:label "prim_transcript" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2242,42 +2802,55 @@
     rdfs:label "primer_bind" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/PCR_conditions>
     ] .
@@ -2288,57 +2861,75 @@
     rdfs:label "promoter" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bound_moiety>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2354,48 +2945,63 @@
     rdfs:label "protein_bind" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bound_moiety>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2437,57 +3043,75 @@
     rdfs:label "repeat_region" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_family>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_range>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_seq>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/satellite>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2504,54 +3128,71 @@
     rdfs:label "rRNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2560,42 +3201,54 @@
     a owl:Class ;
     rdfs:comment "ribosome binding site;" ;
     rdfs:label "RBS" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/4598299", "http://identifiers.org/pubmed/6170248" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/4598299>, <http://identifiers.org/pubmed/6170248> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2610,39 +3263,51 @@
     rdfs:label "STS" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2653,51 +3318,67 @@
     rdfs:label "sig_peptide" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2708,177 +3389,217 @@
     rdfs:label "source" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/organism>
     ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/mol_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/altitude>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/bio_material>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/cell_line>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/cell_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/chromosome>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/clone>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/clone_lib>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/collected_by>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/collection_date>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/country>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/cultivar>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/culture_collection>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/dev_stage>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/ecotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/environmental_sample>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/focus>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/germline>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/haplogroup>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/haplotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/host>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/identified_by>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/isolate>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/isolation_source>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/lab_host>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/lat_lon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/macronuclear>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/mating_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/organelle>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/PCR_primers>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/plasmid>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pop_variant>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/proviral>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rearranged>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/segment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/serotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/serovar>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/sex>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/specimen_voucher>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/strain>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/sub_clone>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/sub_species>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/sub_strain>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/tissue_lib>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/tissue_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/transgenic>
     ], [
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/variety>
-    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/altitude>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/organism>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mol_type>
+        owl:onProperty <http://insdc.org/owl/type_material>
     ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bio_material>
+        owl:onProperty <http://insdc.org/owl/variety>
     ] .
 
 <http://insdc.org/owl/Stem_Loop>
@@ -2887,45 +3608,59 @@
     rdfs:label "stem_loop" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -2953,48 +3688,63 @@
     rdfs:label "S_region" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3003,39 +3753,50 @@
     a owl:Class ;
     rdfs:comment "TATA box; Goldberg-Hogness box; a conserved AT-rich septamer found about 25 bp before the start point of each eukaryotic RNA polymerase II transcript unit which may be involved in positioning the enzyme  for correct initiation; consensus=TATA(A or T)A(A or T) [1,2];" ;
     rdfs:label "TATA_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/6251548", "http://identifiers.org/pubmed/6985477" ;
+    rdfs:seeAlso <http://identifiers.org/pubmed/6251548>, <http://identifiers.org/pubmed/6985477> ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ] .
@@ -3060,30 +3821,39 @@
     rdfs:label "telomere" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_type>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_range>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/rpt_unit_seq>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3094,42 +3864,55 @@
     rdfs:label "terminator" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3140,45 +3923,59 @@
     rdfs:label "3'UTR" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -3198,54 +3995,71 @@
     rdfs:label "tmRNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/tag_peptide>
     ] .
@@ -3256,60 +4070,79 @@
     rdfs:label "tRNA" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/anticodon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/operon>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
     ] .
@@ -3320,51 +4153,67 @@
     rdfs:label "transit_peptide" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/function>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3380,42 +4229,55 @@
     rdfs:label "unsure" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/compare>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/replace>
     ] .
@@ -3424,7 +4286,68 @@
     a owl:Class ;
     rdfs:comment "variable region of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains;  codes for the variable amino terminal portion; can be composed of V_segments, D_segments, N_regions, and J_segments;" ;
     rdfs:label "V_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature> .
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
 
 <http://insdc.org/owl/Variable_Segment>
     a owl:Class ;
@@ -3432,48 +4355,63 @@
     rdfs:label "V_segment" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudo>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/pseudogene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3484,54 +4422,71 @@
     rdfs:label "variation" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/compare>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/db_xref>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/frequency>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gene_synonym>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/inference>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/map>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/phenotype>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/product>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/replace>
     ], [
+        a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
     ] .
@@ -3611,6 +4566,7 @@
 <http://insdc.org/owl/altitude>
     a owl:DatatypeProperty ;
     rdfs:comment "geographical altitude of the location from which the sample was collected" ;
+    rdfs:domain <http://insdc.org/owl/Source> ;
     rdfs:label "altitude" ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
@@ -4186,7 +5142,7 @@
             "within scaffold"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+    rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/gene>
@@ -4429,7 +5385,7 @@
         )
     ] ;
     rdfs:label "inference" ;
-    rdfs:seeAlso "http://www.insdc.org/inference.html" ;
+    rdfs:seeAlso <http://www.insdc.org/inference.html> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/isMandatoryQualifierOf>
@@ -4505,7 +5461,7 @@
             "within clone"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+    rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/locus>
@@ -4737,7 +5693,7 @@
             "vault_RNA"
         )
     ] ;
-    rdfs:seeAlso "http://www.insdc.org/rna_vocab.html" ;
+    rdfs:seeAlso <http://www.insdc.org/rna_vocab.html> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/note>
@@ -5122,7 +6078,7 @@
             "unprocessed"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.insdc.org/documents/pseudogene-qualifier-vocabulary" ;
+    rdfs:seeAlso <http://www.insdc.org/documents/pseudogene-qualifier-vocabulary> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/qualifier>
@@ -5481,41 +6437,6 @@
 
 xsd:date
     a rdfs:Datatype .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bio_material>
-    ] .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/circular>
-        <http://insdc.org/owl/linear>
-    ) .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/DNA>
-        <http://insdc.org/owl/NA>
-        <http://insdc.org/owl/RNA>
-        <http://insdc.org/owl/mRNA>
-        <http://insdc.org/owl/rRNA>
-        <http://insdc.org/owl/tRNA>
-        <http://insdc.org/owl/uRNA>
-    ) .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/double-stranded>
-        <http://insdc.org/owl/mixed-stranded>
-        <http://insdc.org/owl/single-stranded>
-    ) .
 
 []
     a owl:Axiom ;
@@ -7721,7 +8642,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7732,7 +8653,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7743,7 +8664,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7754,7 +8675,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7765,7 +8686,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7776,7 +8697,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7787,7 +8708,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7798,7 +8719,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7809,7 +8730,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7820,7 +8741,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7831,7 +8752,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7842,7 +8763,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7853,7 +8774,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7864,7 +8785,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -7875,7 +8796,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -13258,6 +14179,17 @@ xsd:date
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/type_material>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Source> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/variety>
     ] .
 
@@ -14629,6 +15561,171 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
     owl:annotatedSource <http://insdc.org/owl/Variable_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
@@ -15572,57 +16669,25 @@ xsd:date
     ] .
 
 []
-    a owl:Axiom ;
-    rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/estimated_length>
-    ] .
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/circular>
+        <http://insdc.org/owl/linear>
+    ) .
 
 []
-    a owl:Axiom ;
-    rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gap_type>
-    ] .
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/DNA>
+        <http://insdc.org/owl/NA>
+        <http://insdc.org/owl/RNA>
+        <http://insdc.org/owl/mRNA>
+        <http://insdc.org/owl/rRNA>
+        <http://insdc.org/owl/tRNA>
+        <http://insdc.org/owl/uRNA>
+    ) .
 
 []
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mol_type>
-    ] .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/organism>
-    ] .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/altitude>
-    ] .
-
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/double-stranded>
+        <http://insdc.org/owl/mixed-stranded>
+        <http://insdc.org/owl/single-stranded>
+    ) .
