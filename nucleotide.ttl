@@ -1,5 +1,5 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <http://ddbj.nig.ac.jp/ontologies/> .
+@prefix : <file:///Users/tf/Work/sw/insdc/INSDC/nucleotide.ttl.raw> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -3592,6 +3592,10 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/transgenic>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/type_material>
     ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -14165,6 +14169,17 @@ xsd:date
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/transgenic>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Source> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/type_material>
     ] .
 
 []

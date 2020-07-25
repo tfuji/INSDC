@@ -1,5 +1,5 @@
-#@prefix : <http://insdc.org/owl/> .
-@prefix : <http://ddbj.nig.ac.jp/ontologies/> .
+#@prefix : <http://ddbj.nig.ac.jp/ontologies/> .
+@prefix : <> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
