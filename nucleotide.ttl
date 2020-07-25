@@ -1,14 +1,17 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <file:///Users/tf/Work/sw/insdc/INSDC/nucleotide.ttl.raw> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://ddbj.nig.ac.jp/ontologies/nucleotide/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-<http://insdc.org/owl/>
+<http://ddbj.nig.ac.jp/ontologies/nucleotide/>
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     a owl:Ontology ;
-    rdfs:label "insdc" ;
-    rdfs:seeAlso <http://www.insdc.org/> .
+    rdfs:comment "DDBJ annotated nucleotide sequence ontology for semantic representation of the INSDC (DDBJ/ENA/GenBank) sequence records" ;
+    rdfs:label "DDBJ annotated nucleotide sequence ontology" ;
+    rdfs:seeAlso <http://www.insdc.org/documents/feature-table> ;
+    owl:versionInfo "Version 10.3 October 2013" .
 
 <http://insdc.org/owl/ASAP>
     a owl:Class ;
