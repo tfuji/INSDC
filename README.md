@@ -4,6 +4,18 @@ Application Ontology for INSDC
 The INSDC and DDBJ databases standardisation effort
 
 
+## How to create owl
+
+```
+ruby ftdoc2ttl.rb  --full > nucleotide.ttl.raw
+rapper -i turtle -o turtle nucleotide.ttl.raw http://ddbj.nig.ac.jp/ontologies/nucleotide/ > nucleotide.ttl
+```
+
+## How to update owl
+```
+TODO
+```
+
 ## sample querying sparql
 ### get all featues
 
