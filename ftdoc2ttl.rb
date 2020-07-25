@@ -77,6 +77,7 @@ class FTdoc2OWL
 
   def parse_ftdoc
     fff ={}
+    qqq ={}
     doc = Nokogiri::HTML(File.read(File.dirname(__FILE__) + "/resources/feature-table"))
     doc.css('pre').each do |pre|
       if /^The following has been organized according to the following format:/ =~ pre
@@ -129,12 +130,34 @@ class FTdoc2OWL
           fff[feature[:feature_key]] = feature
         end
       end
-      if /^The following is a list of available qualifiers for feature keys and their usage./ =~ pre
-         #pp pre.content.gsub("\n                      ","").split("Qualifier")
-         #puts pre.content
+
+      # parse qualifers
+      qstr =  pre.content
+        .rpartition("The information is arranged as follows:\n\n\n")[2]
+        .partition("7.4 Appendix IV: Controlled vocabularies")[0]
+        .gsub("\n                      "," ")
+        .gsub(/\n+/,"\n")
+
+      qstr.split("Qualifier       /").slice(1..-1).each do |q|
+        q = q.gsub("\n                "," ")
+        q.match(/^([^\n]+)?\n{1,}Definition      (.+)\nValue format    (.+)\nExample         (.+)?(\nComment         .+)?/m) do |md|
+          qualifier ={
+            :qualifier_key => md[1].sub(/\=?\s*$/,""), 
+            :definition  => md[2].gsub(/\s+/," "), 
+            :value_format => md[3], 
+            :example => md[4].gsub(/Comment         .+\Z/m,"").strip, 
+            :comment => ''
+          }
+          if /\nComment         (.+)?/m =~ md[4]
+            qualifier[:comment] = $1.strip.gsub(/\s+/," ") 
+          end
+          qqq[qualifier[:qualifier_key]] = qualifier
+        end
       end
     end
+    @qqq =qqq
     @fff =fff
+    pp @qqq
   end
 
   def owl_add
