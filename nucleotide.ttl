@@ -1,75 +1,14 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://ddbj.nig.ac.jp/ontologies/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://insdc.org/owl/#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://insdc.org/owl/>
     a owl:Ontology ;
     rdfs:label "insdc" ;
-    rdfs:seeAlso "http://www.insdc.org/" ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/allele>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/citation>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/db_xref>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/experiment>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gene>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gene_synonym>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/inference>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/locus_tag>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/map>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/note>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/old_locus_tag>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/product>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/pseudo>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/pseudogene>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/standard_name>
-    ] .
+    rdfs:seeAlso <http://www.insdc.org/> .
 
 <http://insdc.org/owl/ASAP>
     a owl:Class ;
@@ -87,22 +26,17 @@
     rdfs:label "assembly_gap" ;
     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
     owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/estimated_length>
-    ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/gap_type>
     ], [
+        a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/linkage_evidence>
     ], [
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/estimated_length>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gap_type>
     ] .
 
 <http://insdc.org/owl/Attenuator>
@@ -110,7 +44,8 @@
     rdfs:comment """1) region of DNA at which regulation of termination of transcription occurs, which controls the expression of some bacterial operons;
 2) sequence segment located between the promoter and the first structural gene that causes partial termination of transcription""" ;
     rdfs:label "attenuator" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -167,19 +102,20 @@
 <http://insdc.org/owl/BioProject>
     a owl:Class ;
     rdfs:label "BioProject" ;
-    rdfs:subClassOf <http://insdc.org/owl/Database>, owl:Thing .
+    rdfs:subClassOf <http://insdc.org/owl/Database> .
 
 <http://insdc.org/owl/BioSample>
     a owl:Class ;
     rdfs:label "BioSample" ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf <http://insdc.org/owl/Database> .
 
 <http://insdc.org/owl/CAAT_Signal>
     a owl:Class ;
     rdfs:comment "CAAT box; part of a conserved sequence located about 75 bp up-stream of the start point of eukaryotic transcription units which may be involved in RNA polymerase binding; consensus=GG(C or T)CAATCT [1,2]." ;
     rdfs:label "CAAT_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/6193753", "http://identifiers.org/pubmed/6985477" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/6193753>, <http://identifiers.org/pubmed/6985477> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -238,7 +174,8 @@
     a owl:Class ;
     rdfs:comment "region of biological interest identified as a centromere and which has been experimentally characterized;" ;
     rdfs:label "centromere" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
@@ -268,7 +205,8 @@
     a owl:Class ;
     rdfs:comment "coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a protein (location includes stop codon); feature includes amino acid conceptual translation." ;
     rdfs:label "CDS" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -390,7 +328,8 @@
     a owl:Class ;
     rdfs:comment "constant region of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains; includes one or more exons depending on the particular chain" ;
     rdfs:label "C_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -471,7 +410,8 @@
     a owl:Class ;
     rdfs:comment "displacement loop; a region within mitochondrial DNA in which a short stretch of RNA is paired with one strand of DNA, displacing the original partner DNA strand in this region; also used to describe the displacement of a region of one strand of duplex DNA by a single stranded invader in the reaction catalyzed by RecA protein" ;
     rdfs:label "D-loop" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -521,7 +461,8 @@
     a owl:Class ;
     rdfs:comment "Diversity segment of immunoglobulin heavy chain, and T-cell receptor beta chain;" ;
     rdfs:label "D_segment" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -624,7 +565,8 @@
     a owl:Class ;
     rdfs:comment "a cis-acting sequence that increases the utilization of (some)  eukaryotic promoters, and can function in either orientation and in any location (upstream or downstream) relative to the promoter;" ;
     rdfs:label "enhancer" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -686,7 +628,8 @@
     a owl:Class ;
     rdfs:comment "region of genome that codes for portion of spliced mRNA, rRNA and tRNA; may contain 5'UTR, all CDSs and 3' UTR;" ;
     rdfs:label "exon" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -772,7 +715,8 @@
     a owl:Class ;
     rdfs:comment "region at the 5' end of a mature transcript (preceding the initiation codon) that is not translated into a protein;" ;
     rdfs:label "5'UTR" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -834,7 +778,8 @@
     a owl:Class ;
     rdfs:comment "GC box; a conserved GC-rich region located upstream of the start point of eukaryotic transcription units which may occur in multiple copies or in either orientation; consensus=GGGCGG;" ;
     rdfs:label "GC_signal" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -899,7 +844,12 @@
     a owl:Class ;
     rdfs:comment "gap in the sequence" ;
     rdfs:label "gap" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/estimated_length>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/experiment>
@@ -915,10 +865,6 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/note>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/estimated_length>
     ] .
 
 <http://insdc.org/owl/Genbank>
@@ -929,7 +875,8 @@
     a owl:Class ;
     rdfs:comment "region of biological interest identified as a gene and for which a name has been assigned;" ;
     rdfs:label "gene" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1036,7 +983,7 @@
     a owl:Class ;
     rdfs:comment "International Nucleotide Sequence Database Collaboration" ;
     rdfs:label "INSDC" ;
-    rdfs:seeAlso "http://www.insdc.org/about" ;
+    rdfs:seeAlso <http://www.insdc.org/about> ;
     rdfs:subClassOf owl:Thing .
 
 <http://insdc.org/owl/ISFinder>
@@ -1053,7 +1000,8 @@
     a owl:Class ;
     rdfs:comment "intervening DNA; DNA which is eliminated through any of several kinds of recombination;" ;
     rdfs:label "iDNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1115,7 +1063,8 @@
     a owl:Class ;
     rdfs:comment "a segment of DNA that is transcribed, but removed from within the transcript by splicing together the sequences (exons) on either side of it;" ;
     rdfs:label "intron" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1189,7 +1138,68 @@
     a owl:Class ;
     rdfs:comment "joining segment of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains;" ;
     rdfs:label "J_segment" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature> .
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
 
 <http://insdc.org/owl/Keyword>
     a owl:Class ;
@@ -1203,7 +1213,8 @@
     a owl:Class ;
     rdfs:comment "long terminal repeat, a sequence directly repeated at both ends of a defined sequence, of the sort typically found in retroviruses;" ;
     rdfs:label "LTR" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1268,7 +1279,8 @@
     a owl:Class ;
     rdfs:comment "mature peptide or protein coding sequence; coding sequence for the mature or final peptide or protein product following post-translational modification; the location does not include the stop codon (unlike the corresponding CDS);" ;
     rdfs:label "mat_peptide" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1342,7 +1354,8 @@
     a owl:Class ;
     rdfs:comment "messenger RNA; includes 5'untranslated region (5'UTR), coding sequences (CDS, exon) and 3'untranslated region (3'UTR);" ;
     rdfs:label "mRNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1424,8 +1437,9 @@
     a owl:Class ;
     rdfs:comment "Pribnow box; a conserved region about 10 bp upstream of the start point of bacterial transcription units which may be involved in binding RNA polymerase; consensus=TAtAaT [1,2,3,4];" ;
     rdfs:label "-10_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/1054851", "http://identifiers.org/pubmed/1093168", "http://identifiers.org/pubmed/6344016", "http://identifiers.org/pubmed/94251" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/1054851>, <http://identifiers.org/pubmed/1093168>, <http://identifiers.org/pubmed/6344016>, <http://identifiers.org/pubmed/94251> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1483,8 +1497,9 @@
     a owl:Class ;
     rdfs:comment "a conserved hexamer about 35 bp upstream of the start point of bacterial transcription units; consensus=TTGACa or TGTTGACA;" ;
     rdfs:label "-35_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/1095210", "http://identifiers.org/pubmed/1256568", "http://identifiers.org/pubmed/6181373" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/1095210>, <http://identifiers.org/pubmed/1256568>, <http://identifiers.org/pubmed/6181373> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1542,7 +1557,12 @@
     a owl:Class ;
     rdfs:comment "site in nucleic acid which covalently or non-covalently binds another moiety that cannot be described by any other binding key (primer_bind or protein_bind);" ;
     rdfs:label "misc_binding" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/bound_moiety>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1590,17 +1610,14 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bound_moiety>
     ] .
 
 <http://insdc.org/owl/Miscellaneous_Difference>
     a owl:Class ;
     rdfs:comment "feature sequence is different from that presented in the entry and cannot be described by any other difference key (unsure, old_sequence, variation, or modified_base);" ;
     rdfs:label "misc_difference" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1670,7 +1687,8 @@
     a owl:Class ;
     rdfs:comment "region of biological interest which cannot be described by any other feature key; a new or rare feature;" ;
     rdfs:label "misc_feature" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1748,7 +1766,8 @@
     a owl:Class ;
     rdfs:comment "any transcript or RNA product that cannot be defined by other RNA keys (prim_transcript, precursor_RNA, mRNA, 5'UTR, 3'UTR, exon, CDS, sig_peptide, transit_peptide, mat_peptide, intron, polyA_site, ncRNA, rRNA and tRNA);" ;
     rdfs:label "misc_RNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1826,7 +1845,8 @@
     a owl:Class ;
     rdfs:comment "site of any generalized, site-specific or replicative recombination event where there is a breakage and reunion of duplex DNA that cannot be described by other recombination keys or qualifiers of source key (/proviral);" ;
     rdfs:label "misc_recomb" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1880,7 +1900,8 @@
     a owl:Class ;
     rdfs:comment "any region containing a signal controlling or altering gene function or expression that cannot be described by other signal keys (promoter, CAAT_signal, TATA_signal, -35_signal, -10_signal, GC_signal, RBS, polyA_signal, enhancer, attenuator, terminator, and rep_origin)." ;
     rdfs:label "misc_signal" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -1946,7 +1967,8 @@
     a owl:Class ;
     rdfs:comment "any secondary or tertiary nucleotide structure or conformation that cannot be described by other Structure keys (stem_loop and D-loop);" ;
     rdfs:label "misc_structure" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2004,7 +2026,12 @@
     a owl:Class ;
     rdfs:comment "region of genome containing mobile elements;" ;
     rdfs:label "mobile_element" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/mobile_element_type>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2064,17 +2091,18 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mobile_element_type>
     ] .
 
 <http://insdc.org/owl/Modified_Base>
     a owl:Class ;
     rdfs:comment "the indicated nucleotide is a modified nucleotide and should be substituted for by the indicated molecule (given in the mod_base qualifier value)" ;
     rdfs:label "modified_base" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/mod_base>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2122,10 +2150,6 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/old_locus_tag>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mod_base>
     ] .
 
 <http://insdc.org/owl/Molecule>
@@ -2147,7 +2171,8 @@
     a owl:Class ;
     rdfs:comment "extra nucleotides inserted between rearranged immunoglobulin segments." ;
     rdfs:label "N_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2213,7 +2238,12 @@
     a owl:Class ;
     rdfs:comment "a non-protein-coding gene, other than ribosomal RNA and transfer RNA, the functional molecule of which is the RNA transcript;" ;
     rdfs:label "ncRNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/ncRNA_class>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2285,17 +2315,22 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/trans_splicing>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/ncRNA_class>
     ] .
 
 <http://insdc.org/owl/Old_Sequence>
     a owl:Class ;
     rdfs:comment "the presented sequence revises a previous version of the sequence at this location;" ;
     rdfs:label "old_sequence" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/compare>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2339,20 +2374,18 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/replace>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/citation>
-    ], [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/compare>
     ] .
 
 <http://insdc.org/owl/Operon>
     a owl:Class ;
     rdfs:comment "region containing polycistronic transcript including a cluster of genes that are under the control of the same regulatory sequences/promotor and in the same biological pathway" ;
     rdfs:label "operon" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/operon>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2400,10 +2433,6 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/operon>
     ] .
 
 <http://insdc.org/owl/OptionalQualifier>
@@ -2420,7 +2449,8 @@
     a owl:Class ;
     rdfs:comment "origin of transfer; region of a DNA molecule where transfer is initiated during the process of conjugation or mobilization" ;
     rdfs:label "oriT" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2533,8 +2563,9 @@
     a owl:Class ;
     rdfs:comment "recognition region necessary for endonuclease cleavage of an RNA transcript that is followed by polyadenylation; consensus=AATAAA [1];" ;
     rdfs:label "polyA_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/4862513" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/4862513> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2584,7 +2615,8 @@
     a owl:Class ;
     rdfs:comment "site on an RNA transcript to which will be added adenine residues by post-transcriptional polyadenylation;" ;
     rdfs:label "polyA_site" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2634,7 +2666,8 @@
     a owl:Class ;
     rdfs:comment "any RNA species that is not yet the mature RNA product; may include 5' untranslated region (5'UTR), coding sequences (CDS, exon), intervening sequences (intron) and 3' untranslated region (3'UTR);" ;
     rdfs:label "precursor_RNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2704,7 +2737,8 @@
     a owl:Class ;
     rdfs:comment "primary (initial, unprocessed) transcript; includes 5' untranslated region (5'UTR), coding sequences (CDS, exon), intervening sequences (intron) and 3' untranslated region (3'UTR);" ;
     rdfs:label "prim_transcript" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2766,7 +2800,8 @@
     a owl:Class ;
     rdfs:comment "non-covalent primer binding site for initiation of replication, transcription, or reverse transcription; includes site(s) for synthetic e.g., PCR primer elements;" ;
     rdfs:label "primer_bind" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2824,7 +2859,8 @@
     a owl:Class ;
     rdfs:comment "region on a DNA molecule involved in RNA polymerase binding to initiate transcription;" ;
     rdfs:label "promoter" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2907,7 +2943,12 @@
     a owl:Class ;
     rdfs:comment "non-covalent protein binding site on nucleic acid;" ;
     rdfs:label "protein_bind" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/bound_moiety>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -2963,10 +3004,6 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/standard_name>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bound_moiety>
     ] .
 
 <http://insdc.org/owl/PseudoCap>
@@ -3004,7 +3041,8 @@
     a owl:Class ;
     rdfs:comment "region of genome containing repeating units;" ;
     rdfs:label "repeat_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3088,7 +3126,8 @@
     a owl:Class ;
     rdfs:comment "mature ribosomal RNA; RNA component of the ribonucleoprotein particle (ribosome) which assembles amino acids into proteins." ;
     rdfs:label "rRNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3162,8 +3201,9 @@
     a owl:Class ;
     rdfs:comment "ribosome binding site;" ;
     rdfs:label "RBS" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/4598299", "http://identifiers.org/pubmed/6170248" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/4598299>, <http://identifiers.org/pubmed/6170248> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3221,7 +3261,8 @@
     a owl:Class ;
     rdfs:comment "sequence tagged site; short, single-copy DNA sequence that characterizes a mapping landmark on the genome and can be detected by PCR; a region of the genome can be mapped by determining the order of a series of STSs;" ;
     rdfs:label "STS" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3275,7 +3316,8 @@
     a owl:Class ;
     rdfs:comment "signal peptide coding sequence; coding sequence for an N-terminal domain of a secreted protein; this domain is involved in attaching nascent polypeptide to the membrane leader sequence;" ;
     rdfs:label "sig_peptide" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3345,7 +3387,16 @@
     a owl:Class ;
     rdfs:comment "identifies the biological source of the specified span of the sequence; this key is mandatory; more than one source key per sequence is allowed; every entry/record will have, as a minimum, either a single source key spanning the entire sequence or multiple source keys, which together, span the entire sequence." ;
     rdfs:label "source" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/organism>
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/mol_type>
+    ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/altitude>
@@ -3545,36 +3596,14 @@
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/variety>
-    ] ;
-    owl:equivalentClass [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/organism>
-    ], [
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mol_type>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/altitude>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/organism>
-    ], [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mol_type>
-    ], [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bio_material>
     ] .
 
 <http://insdc.org/owl/Stem_Loop>
     a owl:Class ;
     rdfs:comment "hairpin; a double-helical region formed by base-pairing between adjacent (inverted) complementary sequences in a single strand of RNA or DNA." ;
     rdfs:label "stem_loop" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3653,7 +3682,8 @@
     a owl:Class ;
     rdfs:comment "switch region of immunoglobulin heavy chains; involved in the rearrangement of heavy chain DNA leading to the expression of a different immunoglobulin class from the same B-cell;" ;
     rdfs:label "S_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3719,8 +3749,9 @@
     a owl:Class ;
     rdfs:comment "TATA box; Goldberg-Hogness box; a conserved AT-rich septamer found about 25 bp before the start point of each eukaryotic RNA polymerase II transcript unit which may be involved in positioning the enzyme  for correct initiation; consensus=TATA(A or T)A(A or T) [1,2];" ;
     rdfs:label "TATA_signal" ;
-    rdfs:seeAlso "http://identifiers.org/pubmed/6251548", "http://identifiers.org/pubmed/6985477" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:seeAlso <http://identifiers.org/pubmed/6251548>, <http://identifiers.org/pubmed/6985477> ;
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3784,7 +3815,8 @@
     a owl:Class ;
     rdfs:comment "region of biological interest identified as a telomere and which has been experimentally characterized;" ;
     rdfs:label "telomere" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/citation>
@@ -3826,7 +3858,8 @@
     a owl:Class ;
     rdfs:comment "sequence of DNA located either at the end of the transcript that causes RNA polymerase to terminate transcription;" ;
     rdfs:label "terminator" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3884,7 +3917,8 @@
     a owl:Class ;
     rdfs:comment "region at the 3' end of a mature transcript (following the stop codon) that is not translated into a protein;" ;
     rdfs:label "3'UTR" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -3955,7 +3989,8 @@
     a owl:Class ;
     rdfs:comment "transfer messenger RNA; tmRNA acts as a tRNA first, and then as an mRNA that encodes a peptide tag; the ribosome translates this mRNA region of tmRNA and attaches the encoded peptide tag to the C-terminus of the unfinished protein; this attached tag targets the protein for destruction or proteolysis;" ;
     rdfs:label "tmRNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4029,7 +4064,8 @@
     a owl:Class ;
     rdfs:comment "mature transfer RNA, a small RNA molecule (75-85 bases long) that mediates the translation of a nucleic acid sequence into an amino acid sequence;" ;
     rdfs:label "tRNA" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4111,7 +4147,8 @@
     a owl:Class ;
     rdfs:comment "transit peptide coding sequence; coding sequence for an N-terminal domain of a nuclear-encoded organellar protein; this domain is involved in post-translational import of the protein into the organelle;" ;
     rdfs:label "transit_peptide" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4186,7 +4223,8 @@
     a owl:Class ;
     rdfs:comment "author is unsure of exact sequence in this region;" ;
     rdfs:label "unsure" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4244,13 +4282,75 @@
     a owl:Class ;
     rdfs:comment "variable region of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains;  codes for the variable amino terminal portion; can be composed of V_segments, D_segments, N_regions, and J_segments;" ;
     rdfs:label "V_region" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature> .
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
 
 <http://insdc.org/owl/Variable_Segment>
     a owl:Class ;
     rdfs:comment "variable segment of immunoglobulin light and heavy chains, and T-cell receptor alpha, beta, and gamma chains; codes for most of the variable region (V_region) and the last few amino acids of the leader peptide;" ;
     rdfs:label "V_segment" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4316,7 +4416,8 @@
     a owl:Class ;
     rdfs:comment "a related strain contains stable mutations from the same gene (e.g., RFLPs, polymorphisms, etc.) which differ from the presented sequence at this location (and possibly others);" ;
     rdfs:label "variation" ;
-    rdfs:subClassOf <http://insdc.org/owl/Feature>, [
+    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
+    owl:equivalentClass [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/allele>
@@ -4461,6 +4562,7 @@
 <http://insdc.org/owl/altitude>
     a owl:DatatypeProperty ;
     rdfs:comment "geographical altitude of the location from which the sample was collected" ;
+    rdfs:domain <http://insdc.org/owl/Source> ;
     rdfs:label "altitude" ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
@@ -5036,7 +5138,7 @@
             "within scaffold"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+    rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/gene>
@@ -5279,7 +5381,7 @@
         )
     ] ;
     rdfs:label "inference" ;
-    rdfs:seeAlso "http://www.insdc.org/inference.html" ;
+    rdfs:seeAlso <http://www.insdc.org/inference.html> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/isMandatoryQualifierOf>
@@ -5355,7 +5457,7 @@
             "within clone"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+    rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/locus>
@@ -5587,7 +5689,7 @@
             "vault_RNA"
         )
     ] ;
-    rdfs:seeAlso "http://www.insdc.org/rna_vocab.html" ;
+    rdfs:seeAlso <http://www.insdc.org/rna_vocab.html> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/note>
@@ -5972,7 +6074,7 @@
             "unprocessed"^^xsd:string
         )
     ] ;
-    rdfs:seeAlso "http://www.insdc.org/documents/pseudogene-qualifier-vocabulary" ;
+    rdfs:seeAlso <http://www.insdc.org/documents/pseudogene-qualifier-vocabulary> ;
     rdfs:subPropertyOf <http://insdc.org/owl/qualifier> .
 
 <http://insdc.org/owl/qualifier>
@@ -6331,41 +6433,6 @@
 
 xsd:date
     a rdfs:Datatype .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/bio_material>
-    ] .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/circular>
-        <http://insdc.org/owl/linear>
-    ) .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/DNA>
-        <http://insdc.org/owl/NA>
-        <http://insdc.org/owl/RNA>
-        <http://insdc.org/owl/mRNA>
-        <http://insdc.org/owl/rRNA>
-        <http://insdc.org/owl/tRNA>
-        <http://insdc.org/owl/uRNA>
-    ) .
-
-[]
-    a owl:AllDifferent ;
-    owl:distinctMembers (<http://insdc.org/owl/double-stranded>
-        <http://insdc.org/owl/mixed-stranded>
-        <http://insdc.org/owl/single-stranded>
-    ) .
 
 []
     a owl:Axiom ;
@@ -8571,7 +8638,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8582,7 +8649,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8593,7 +8660,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8604,7 +8671,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8615,7 +8682,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8626,7 +8693,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8637,7 +8704,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8648,7 +8715,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8659,7 +8726,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8670,7 +8737,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8681,7 +8748,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8692,7 +8759,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8703,7 +8770,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8714,7 +8781,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8725,7 +8792,7 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/> ;
+    owl:annotatedSource <http://insdc.org/owl/Joining_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -15479,6 +15546,171 @@ xsd:date
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/allele>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/citation>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/db_xref>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/experiment>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/gene_synonym>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/inference>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/locus_tag>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/map>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/note>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/old_locus_tag>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/product>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudo>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/pseudogene>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://insdc.org/owl/Variable_Region> ;
+    owl:annotatedTarget [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <http://insdc.org/owl/standard_name>
+    ] .
+
+[]
+    a owl:Axiom ;
+    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
+    owl:annotatedProperty owl:equivalentClass ;
     owl:annotatedSource <http://insdc.org/owl/Variable_Segment> ;
     owl:annotatedTarget [
         a owl:Restriction ;
@@ -16422,57 +16654,26 @@ xsd:date
     ] .
 
 []
-    a owl:Axiom ;
-    rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/estimated_length>
-    ] .
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/circular>
+        <http://insdc.org/owl/linear>
+    ) .
 
 []
-    a owl:Axiom ;
-    rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/gap_type>
-    ] .
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/DNA>
+        <http://insdc.org/owl/NA>
+        <http://insdc.org/owl/RNA>
+        <http://insdc.org/owl/mRNA>
+        <http://insdc.org/owl/rRNA>
+        <http://insdc.org/owl/tRNA>
+        <http://insdc.org/owl/uRNA>
+    ) .
 
 []
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/mol_type>
-    ] .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/organism>
-    ] .
-
-[]
-    a owl:Axiom ;
-    rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-    owl:annotatedProperty owl:equivalentClass ;
-    owl:annotatedSource <http://insdc.org/owl/Source> ;
-    owl:annotatedTarget [
-        a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty <http://insdc.org/owl/altitude>
-    ] .
+    a owl:AllDifferent ;
+    owl:distinctMembers (<http://insdc.org/owl/double-stranded>
+        <http://insdc.org/owl/mixed-stranded>
+        <http://insdc.org/owl/single-stranded>
+    ) .
 

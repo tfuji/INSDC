@@ -1,6 +1,7 @@
+#@prefix : <http://insdc.org/owl/> .
+@prefix : <http://ddbj.nig.ac.jp/ontologies/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://insdc.org/owl/#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -10,7 +11,7 @@
                         
                         rdfs:label "insdc" ;
                         
-                        rdfs:seeAlso "http://www.insdc.org/" .
+                        rdfs:seeAlso <http://www.insdc.org/> .
 
 
 #################################################################
@@ -361,6 +362,8 @@ xsd:date rdf:type rdfs:Datatype .
                                 rdfs:comment "geographical altitude of the location from which the sample was collected" ;
                                 
                                 rdfs:subPropertyOf <http://insdc.org/owl/qualifier> ;
+
+                                rdfs:domain <http://insdc.org/owl/Source> ;
                                 
                                 rdfs:range rdfs:Literal .
 
@@ -1109,7 +1112,7 @@ xsd:date rdf:type rdfs:Datatype .
                                 
                                 rdfs:label "gap_type" ;
                                 
-                                rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+                                rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
                                 
                                 rdfs:comment "type of gap connecting components in records of a genome assembly, or the type of biological gap in a record that is part of a genome assembly;" ;
                                 
@@ -1380,7 +1383,7 @@ xsd:date rdf:type rdfs:Datatype .
                                  
                                  rdfs:label "inference" ;
                                  
-                                 rdfs:seeAlso "http://www.insdc.org/inference.html" ;
+                                 rdfs:seeAlso <http://www.insdc.org/inference.html> ;
                                  
                                  rdfs:comment "a structured description of non-experimental evidence that supports the feature identification or assignment." ;
                                  
@@ -1529,7 +1532,7 @@ xsd:date rdf:type rdfs:Datatype .
                                         
                                         rdfs:label "linkage_evidence" ;
                                         
-                                        rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml" ;
+                                        rdfs:seeAlso <http://www.ncbi.nlm.nih.gov/projects/genome/assembly/agp/AGP_Specification.shtml> ;
                                         
                                         rdfs:comment "type of evidence establishing linkage across an assembly_gap. Only allowed to be used with assembly_gap features that have a /gap_type value of \"within scaffold\" or \"repeat within scaffold\";" ;
                                         
@@ -1841,7 +1844,7 @@ xsd:date rdf:type rdfs:Datatype .
                                    
                                    rdfs:comment "a structured description of the classification of the non-coding RNA described by the ncRNA parent key" ;
                                    
-                                   rdfs:seeAlso "http://www.insdc.org/rna_vocab.html" ;
+                                   rdfs:seeAlso <http://www.insdc.org/rna_vocab.html> ;
                                    
                                    rdfs:domain <http://insdc.org/owl/Non_Coding_RNA> ;
                                    
@@ -2380,7 +2383,7 @@ xsd:date rdf:type rdfs:Datatype .
                                   
                                   rdfs:label "pseudogene" ;
                                   
-                                  rdfs:seeAlso "http://www.insdc.org/documents/pseudogene-qualifier-vocabulary" ;
+                                  rdfs:seeAlso <http://www.insdc.org/documents/pseudogene-qualifier-vocabulary> ;
                                   
                                   rdfs:comment "indicates that this feature is a pseudogene of the element named by the feature key" ;
                                   
@@ -2999,37 +3002,9 @@ xsd:date rdf:type rdfs:Datatype .
                                     
                                     rdfs:label "assembly_gap" ;
                                     
-                                    owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://insdc.org/owl/estimated_length> ;
-                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                        ] ,
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://insdc.org/owl/gap_type> ;
-                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                        ] ;
-                                    
                                     rdfs:subClassOf <http://insdc.org/owl/Feature> ;
                                     
                                     rdfs:comment "gap between two components of a CON record that is part of a genome assembly;" .
-[ rdf:type owl:Axiom ;
-  rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-  owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/estimated_length> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
-[ rdf:type owl:Axiom ;
-  rdfs:label <http://insdc.org/owl/MandatoryQualifiers> ;
-  owl:annotatedSource <http://insdc.org/owl/Assembly_Gap> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/gap_type> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
-
 
 
 ###  http://insdc.org/owl/Attenuator
@@ -3051,8 +3026,7 @@ xsd:date rdf:type rdfs:Datatype .
                                   
                                   rdfs:label "BioProject" ;
                                   
-                                  rdfs:subClassOf <http://insdc.org/owl/Database> ,
-                                                  owl:Thing .
+                                  rdfs:subClassOf <http://insdc.org/owl/Database> .
 
 
 
@@ -3062,7 +3036,7 @@ xsd:date rdf:type rdfs:Datatype .
                                  
                                  rdfs:label "BioSample" ;
                                  
-                                 rdfs:subClassOf owl:Thing .
+                                 rdfs:subClassOf <http://insdc.org/owl/Database>.
 
 
 
@@ -3076,8 +3050,8 @@ xsd:date rdf:type rdfs:Datatype .
                                    
                                    rdfs:comment "CAAT box; part of a conserved sequence located about 75 bp up-stream of the start point of eukaryotic transcription units which may be involved in RNA polymerase binding; consensus=GG(C or T)CAATCT [1,2]." ;
                                    
-                                   rdfs:seeAlso "http://identifiers.org/pubmed/6985477" ,
-                                                "http://identifiers.org/pubmed/6193753" .
+                                   rdfs:seeAlso <http://identifiers.org/pubmed/6985477> ,
+                                                <http://identifiers.org/pubmed/6193753> .
 
 
 
@@ -3421,7 +3395,7 @@ xsd:date rdf:type rdfs:Datatype .
                              
                              rdfs:subClassOf owl:Thing ;
                              
-                             rdfs:seeAlso "http://www.insdc.org/about" ;
+                             rdfs:seeAlso <http://www.insdc.org/about> ;
                              
                              rdfs:comment "International Nucleotide Sequence Database Collaboration" .
 
@@ -3557,10 +3531,10 @@ xsd:date rdf:type rdfs:Datatype .
                                        
                                        rdfs:subClassOf <http://insdc.org/owl/Feature> ;
                                        
-                                       rdfs:seeAlso "http://identifiers.org/pubmed/1054851" ,
-                                                    "http://identifiers.org/pubmed/94251" ,
-                                                    "http://identifiers.org/pubmed/1093168" ,
-                                                    "http://identifiers.org/pubmed/6344016" ;
+                                       rdfs:seeAlso <http://identifiers.org/pubmed/1054851> ,
+                                                    <http://identifiers.org/pubmed/94251> ,
+                                                    <http://identifiers.org/pubmed/1093168> ,
+                                                    <http://identifiers.org/pubmed/6344016> ;
                                        
                                        rdfs:comment "Pribnow box; a conserved region about 10 bp upstream of the start point of bacterial transcription units which may be involved in binding RNA polymerase; consensus=TAtAaT [1,2,3,4];" .
 
@@ -3576,9 +3550,9 @@ xsd:date rdf:type rdfs:Datatype .
                                        
                                        rdfs:comment "a conserved hexamer about 35 bp upstream of the start point of bacterial transcription units; consensus=TTGACa or TGTTGACA;" ;
                                        
-                                       rdfs:seeAlso "http://identifiers.org/pubmed/6181373" ,
-                                                    "http://identifiers.org/pubmed/1256568" ,
-                                                    "http://identifiers.org/pubmed/1095210" .
+                                       rdfs:seeAlso <http://identifiers.org/pubmed/6181373> ,
+                                                    <http://identifiers.org/pubmed/1256568> ,
+                                                    <http://identifiers.org/pubmed/1095210> .
 
 
 
@@ -3844,7 +3818,7 @@ xsd:date rdf:type rdfs:Datatype .
                                     
                                     rdfs:comment "recognition region necessary for endonuclease cleavage of an RNA transcript that is followed by polyadenylation; consensus=AATAAA [1];" ;
                                     
-                                    rdfs:seeAlso "http://identifiers.org/pubmed/4862513" .
+                                    rdfs:seeAlso <http://identifiers.org/pubmed/4862513> .
 
 
 
@@ -4030,11 +4004,11 @@ xsd:date rdf:type rdfs:Datatype .
                                              
                                              rdfs:subClassOf <http://insdc.org/owl/Feature> ;
                                              
-                                             rdfs:seeAlso "http://identifiers.org/pubmed/6170248" ;
+                                             rdfs:seeAlso <http://identifiers.org/pubmed/6170248> ;
                                              
                                              rdfs:comment "ribosome binding site;" ;
                                              
-                                             rdfs:seeAlso "http://identifiers.org/pubmed/4598299" .
+                                             rdfs:seeAlso <http://identifiers.org/pubmed/4598299> .
 
 
 
@@ -4076,62 +4050,9 @@ xsd:date rdf:type rdfs:Datatype .
                               
                               rdfs:label "source" ;
                               
-                              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <http://insdc.org/owl/altitude> ;
-                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <http://insdc.org/owl/organism> ;
-                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <http://insdc.org/owl/mol_type> ;
-                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <http://insdc.org/owl/bio_material> ;
-                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                  ] ;
-                              
                               rdfs:subClassOf <http://insdc.org/owl/Feature> ;
                               
                               rdfs:comment "identifies the biological source of the specified span of the sequence; this key is mandatory; more than one source key per sequence is allowed; every entry/record will have, as a minimum, either a single source key spanning the entire sequence or multiple source keys, which together, span the entire sequence." .
-[ rdf:type owl:Axiom ;
-  rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-  owl:annotatedSource <http://insdc.org/owl/Source> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/mol_type> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
-[ rdf:type owl:Axiom ;
-  rdfs:isDefinedBy <http://insdc.org/owl/MandatoryQualifiers> ;
-  owl:annotatedSource <http://insdc.org/owl/Source> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/organism> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
-[ rdf:type owl:Axiom ;
-  rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-  owl:annotatedSource <http://insdc.org/owl/Source> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/altitude> ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
-[ rdf:type owl:Axiom ;
-  rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
-  owl:annotatedSource <http://insdc.org/owl/Source> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://insdc.org/owl/bio_material> ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                      ]
-] .
 
 
 
@@ -4201,11 +4122,11 @@ xsd:date rdf:type rdfs:Datatype .
                                    
                                    rdfs:subClassOf <http://insdc.org/owl/Feature> ;
                                    
-                                   rdfs:seeAlso "http://identifiers.org/pubmed/6985477" ;
+                                   rdfs:seeAlso <http://identifiers.org/pubmed/6985477> ;
                                    
                                    rdfs:comment "TATA box; Goldberg-Hogness box; a conserved AT-rich septamer found about 25 bp before the start point of each eukaryotic RNA polymerase II transcript unit which may be involved in positioning the enzyme  for correct initiation; consensus=TATA(A or T)A(A or T) [1,2];" ;
                                    
-                                   rdfs:seeAlso "http://identifiers.org/pubmed/6251548" .
+                                   rdfs:seeAlso <http://identifiers.org/pubmed/6251548> .
 
 
 

@@ -95,7 +95,8 @@ class FTdoc2OWL
           }
 
           f ="Feature Key           #{f}"
-          if /(Feature Key)\s+(\S+)?\n(Definition\s+.*)/m =~ f
+          f.gsub!("\n \n","\n") # for V_region 2014-08-09
+          if /(Feature Key)\s+(\S+)?\n+(Definition\s+.*)/m =~ f
               feature[:feature_key] = $2.strip
           end
           if /(Definition)\s+(.+?)\n(Mandatory qualifiers|Optional qualifiers)\s+.*/m =~ f
@@ -138,17 +139,18 @@ class FTdoc2OWL
 
   def owl_add
     @fff.each { |k,v|
-    #puts ff[k]
+       #puts "###k: #{@urls[k]} v: #{v}"
        v[:mandatory_qualifier].each do |mq,vv|
        mqr = mq.sub(/^\//,"").strip
+       #puts "###k: #{@urls[k]},mqr: #{mqr}, v: #{vv}"
        puts <<EOF
-<#{@urls[k]}>
-    owl:equivalentClass [
-    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty <http://insdc.org/owl/#{mqr}>
+<#{@urls[k]}> owl:equivalentClass [
+    rdf:type owl:Restriction ;
+    owl:onProperty <http://insdc.org/owl/#{mqr}> ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger 
     ] .
 
-[]
+[
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
@@ -157,7 +159,8 @@ class FTdoc2OWL
         a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/#{mqr}>
-    ] .  
+    ] 
+].
 
 EOF
       end
@@ -165,14 +168,13 @@ EOF
       v[:optional_qualifier].each do |mq,vv|
         oqr = mq.sub(/^\//,"").strip
         puts <<EOF
-<#{@urls[k]}>
-    rdfs:subClassOf [
+<#{@urls[k]}> owl:equivalentClass [
     a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty <http://insdc.org/owl/#{oqr}>
+    owl:onProperty <http://insdc.org/owl/#{oqr}> ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger
     ] .
 
-[]
+[
     a owl:Axiom ;
     rdfs:isDefinedBy <http://insdc.org/owl/OptionalQualifier> ;
     owl:annotatedProperty owl:equivalentClass ;
@@ -181,8 +183,8 @@ EOF
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty <http://insdc.org/owl/#{oqr}>
-    ] .  
-
+    ] 
+].
 EOF
       end
     }
