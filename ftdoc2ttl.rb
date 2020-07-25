@@ -157,7 +157,7 @@ class FTdoc2OWL
     end
     @qqq =qqq
     @fff =fff
-    pp @qqq
+##    pp @qqq
   end
 
   def owl_add
